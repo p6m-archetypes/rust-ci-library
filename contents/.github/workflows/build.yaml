@@ -20,6 +20,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: p6m-actions/rust-setup@v1
 
+      # prost-build/tonic-build shell out to protoc, which GitHub's ubuntu runners do not ship -
+      # without this, every fresh clone of a gRPC service fails its first Build run (S10).
+      - name: Install protoc
+        run: sudo apt-get update && sudo apt-get install -y protobuf-compiler
+
       - name: Cut Patch Version
         if: github.ref_name == 'main'
         id: cut-patch
