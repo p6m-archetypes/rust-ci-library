@@ -1,0 +1,16 @@
+---
+description: "Rust CI Workflows — GitHub Actions build and release workflows for Cargo projects"
+summary: >
+  Generates .github/workflows/build.yaml (CI on push/PR) and
+  .github/workflows/cut-tag.yaml (manual release tagging) for any
+  Rust service archetype. Consumed as a library by service
+  archetypes, or run standalone to retrofit an existing project.
+authors: ["Jimmie Fulton <jimmie@ybor.ai>"]
+tags: ["library", "rust", "ci", "github-actions", "cargo"]
+
+requires:
+  archetect: "3.0.0"
+
+templating:
+  trim_blocks: true
+  lstrip_blocks: true
