@@ -1,8 +1,7 @@
 -- rust-ci-library main module.
 --
 -- Generates GitHub Actions CI workflows for Rust Cargo service archetypes:
---   .github/workflows/build.yaml     — CI build on every push and PR
---   .github/workflows/cut-tag.yaml   — manual workflow_dispatch release tagging
+--   .github/workflows/build.yaml     — the one pipeline: PR + main builds, and manual minor/major releases via workflow_dispatch (version-level)
 --   .github/workflows/promote.yaml   — manual workflow_dispatch promotion of a release to stg/prd
 --
 -- Uses p6m-actions: rust-setup@v1, rust-build@v1, rust-cut-tag@v1
